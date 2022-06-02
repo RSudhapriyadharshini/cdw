@@ -162,4 +162,3 @@ class NetworkAdaptersSpider(scrapy.Spider):
         item['thumbnail_image'] = thumbnail_image
         item['categories'] = categories
         yield item
-

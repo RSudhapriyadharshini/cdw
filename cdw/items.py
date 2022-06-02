@@ -17,3 +17,4 @@ class CdwItem(scrapy.Item):
     base_image = scrapy.Field()
     thumbnail_image = scrapy.Field()
     categories = scrapy.Field()
+

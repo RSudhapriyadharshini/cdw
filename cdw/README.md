@@ -36,3 +36,4 @@
 - **scrapy crawl spider_name** to run the code
 - To check the output in the form of CSV file, run the command **scrapy crawl spider_name -o file_name.csv**
 **Note:** Spider name of my file is **network_adapters**
+
