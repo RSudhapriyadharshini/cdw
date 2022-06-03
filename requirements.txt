@@ -34,4 +34,3 @@ lxml
 numerizer
 numpy
 PyPDF2
-
