@@ -1,6 +1,8 @@
 import scrapy
 from scrapy import Request
 from cdw.items import CdwProductItem
+import uuid
+from datetime import datetime, timezone
 
 class CdwNetworkAdaptersSpider(scrapy.Spider):
     """
@@ -64,6 +66,10 @@ class CdwNetworkAdaptersSpider(scrapy.Spider):
         item = CdwProductItem()
         item["dev"] = self.dev
         item["scraped_from"] = response.url
+
+        item["run_id"] = str(uuid.uuid4())
+        item["scraped_at"] = datetime.now(timezone.utc).isoformat()
+        item["schema_version"] = "1.0"
 
         # --- identifiers (data-* attributes on the block itself) ---
         try:

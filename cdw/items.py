@@ -38,3 +38,7 @@ class CdwProductItem(scrapy.Item):
     # --- scrape metadata ---
     dev = scrapy.Field()
     scraped_from = scrapy.Field()        # the search-results page URL this came from
+
+    run_id = scrapy.Field()
+    scraped_at = scrapy.Field()
+    schema_version = scrapy.Field()
