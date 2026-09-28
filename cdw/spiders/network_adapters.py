@@ -21,6 +21,10 @@ class CdwNetworkAdaptersSpider(scrapy.Spider):
 
     dev = "Sudha" 
 
+    run_id = str(uuid.uuid4())
+    scraped_at = datetime.now(timezone.utc).isoformat()
+    schema_version = "1.0"
+
     custom_settings = {
         "DOWNLOAD_DELAY": 1,
         "CONCURRENT_REQUESTS_PER_DOMAIN": 4,
@@ -67,9 +71,9 @@ class CdwNetworkAdaptersSpider(scrapy.Spider):
         item["dev"] = self.dev
         item["scraped_from"] = response.url
 
-        item["run_id"] = str(uuid.uuid4())
-        item["scraped_at"] = datetime.now(timezone.utc).isoformat()
-        item["schema_version"] = "1.0"
+        item["run_id"] = self.run_id
+        item["scraped_at"] = self.scraped_at
+        item["schema_version"] = self.schema_version
 
         # --- identifiers (data-* attributes on the block itself) ---
         try:
