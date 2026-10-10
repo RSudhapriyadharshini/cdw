@@ -12,5 +12,4 @@ RUN pip install --no-cache-dir --upgrade pip \
 
 COPY . .
 
-CMD ["scrapy", "list"]
-
+CMD ["scrapy", "crawl", "cdw_network_adapters"]
